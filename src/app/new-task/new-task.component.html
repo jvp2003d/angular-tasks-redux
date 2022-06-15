@@ -1,1 +1,10 @@
-<p>new-task works!</p>
+
+<input
+type="text"
+id="new-task"
+class="new-task"
+autofocus
+(keyup.enter)="addTask()"
+placeholder="Whats needs to be done?"
+[formControl]="textField"/>
+

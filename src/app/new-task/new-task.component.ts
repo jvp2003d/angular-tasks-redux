@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/redux/app.state';
 import { TasksAddAction } from 'src/redux/task/task.actions';
@@ -9,19 +10,22 @@ import { TasksAddAction } from 'src/redux/task/task.actions';
   styleUrls: ['./new-task.component.scss']
 })
 export class NewTaskComponent implements OnInit {
-
+  textField: FormControl;
   constructor( private _store: Store<AppState>) {
+    this.textField = new FormControl('', [Validators.required]);
    }
 
   ngOnInit(): void {
   }
 
-  add() {
+  addTask() {
     const action = new TasksAddAction({
-     title: 'New task',
+     title: this.textField.value,
      completed: false,
-     date: new Date()});
+     date: new Date()
+    });
      this._store.dispatch(action);
+     this.textField.setValue('');
   }
 
 

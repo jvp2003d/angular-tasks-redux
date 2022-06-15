@@ -1,4 +1,4 @@
-import { Task } from "./task/task.model";
+import { TaskModel} from "./task/task.model";
 export interface AppState {
-  tasks: Task[];
+  tasks: TaskModel[];
 }

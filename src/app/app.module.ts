@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import {  StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppReducer } from 'src/redux/app.reducer';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,16 @@ import { AppReducer } from 'src/redux/app.reducer';
     TaskComponent,
     TasksComponent,
     NewTaskComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     StoreModule.forRoot(AppReducer),
     StoreDevtoolsModule.instrument({
       maxAge:25
-    })
+    }),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

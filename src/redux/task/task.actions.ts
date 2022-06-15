@@ -1,11 +1,11 @@
 import { Action } from "@ngrx/store";
-import { Task } from "./task.model";
+import { TaskModel } from "./task.model";
 
 export const TASK_ADD = "[Tasks] add";
 export class TasksAddAction implements Action {
   readonly type = TASK_ADD;
   constructor(
-    public payload: Task
+    public payload: TaskModel
   ) {
 
   }

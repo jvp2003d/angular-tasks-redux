@@ -6,6 +6,9 @@ import { TaskComponent } from './task/task.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { FooterComponent } from './footer/footer.component';
+import {  StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppReducer } from 'src/redux/app.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,11 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot(AppReducer),
+    StoreDevtoolsModule.instrument({
+      maxAge:25
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

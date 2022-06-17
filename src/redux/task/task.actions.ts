@@ -6,16 +6,24 @@ export enum GlobalActions {
   // Add task action
   TASK_ADD = "[Tasks] add",
   // Delete task
-  DELETE_TASK = "[Tasks] add"
+  TASK_DELETE = "[Tasks] delete"
 }
 
 export class TasksAddAction implements Action {
-  readonly type = GlobalActions.TASK_ADD;
-  constructor(
-    public payload: TaskModel
+  public readonly type = GlobalActions.TASK_ADD;
+
+  constructor(  public payload: TaskModel
   ) {
 
   }
 }
 
-export type AllActions = TasksAddAction;
+export class TasksDeleteAction implements Action {
+  public readonly type = GlobalActions.TASK_DELETE;
+  constructor(public payload: string
+  ) {
+
+  }
+}
+
+export type AllActions = TasksAddAction | TasksDeleteAction;

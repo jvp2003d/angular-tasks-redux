@@ -9,7 +9,7 @@ import { TaskModel } from '../../redux/task/task.model';
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
-  tasks: TaskModel[] = [{title:'', completed: false, date: new Date()}];
+  tasks: TaskModel[] = [{ id: '0', title:'', completed: false, date: new Date()}];
   constructor( private _store: Store<AppState>) {
     this.readTaskState()
    }

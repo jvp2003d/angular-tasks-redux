@@ -20,6 +20,7 @@ export class NewTaskComponent implements OnInit {
 
   addTask() {
     const action = new TasksAddAction({
+     id: Math.random().toString(),
      title: this.textField.value,
      completed: false,
      date: new Date()

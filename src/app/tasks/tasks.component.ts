@@ -11,7 +11,7 @@ import { TaskModel } from '../../redux/task/task.model';
 export class TasksComponent implements OnInit {
   tasks: TaskModel[] = [{title:'', completed: false, date: new Date()}];
   constructor( private _store: Store<AppState>) {
-    this.readTaskState();
+    this.readTaskState()
    }
 
   ngOnInit(): void {

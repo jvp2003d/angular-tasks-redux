@@ -1,4 +1,14 @@
 <li>
-  {{task.title}}
-  <button (click)="deleteTask()">Delete</button>
+  <div class="view">
+    <input
+    class="toogle"
+    type="checkbox"
+    [value]="task.completed"
+    [formControl] = "checkField"/>
+    <label
+     >
+      {{task.title}}{{task.completed}}
+    </label>
+    <button class="destroy" (click)="deleteTask()">Delete</button>
+  </div>
 </li>

@@ -7,7 +7,7 @@ import {AppState} from '../app.state';
 export const selectTasks = (state: AppState) => state.tasks;
 export const selectFilter = (state: AppState) => state.filter;
 
-const getVisibleTasks = createSelector(
+export const getVisibleTasks = createSelector(
   selectTasks,
   selectFilter,
   (tasks, filter) => {

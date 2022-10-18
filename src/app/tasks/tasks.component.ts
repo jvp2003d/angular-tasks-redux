@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { TaskModel } from 'src/redux/task/task.model';
+import { getVisibleTasks } from 'src/redux/task/task.selectors';
 import { AppState } from '../../redux/app.state';
-import { TaskModel } from '../../redux/task/task.model';
 
 @Component({
   selector: 'tsk-tasks',
@@ -18,7 +19,7 @@ export class TasksComponent implements OnInit {
   }
 
   private readTaskState() {
-    this._store.select('tasks').subscribe((tasks) => this.tasks=tasks)
+    this._store.select(getVisibleTasks).subscribe((tasks) => this.tasks=tasks)
   }
 
 }

@@ -1,0 +1,39 @@
+
+> angular-tasks-redux@0.0.0 start
+> ng serve
+
+❯ Building...
+✔ Building...
+Initial chunk files | Names         | Raw size
+main.js             | main          |  7.02 kB |
+styles.css          | styles        | 96 bytes |
+polyfills.js        | polyfills     | 38 bytes |
+
+                    | Initial total |  7.15 kB
+
+Application bundle generation complete. [5.182 seconds] - 2026-03-06T18:18:50.244Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          |  7.02 kB |
+styles.css          | styles        | 96 bytes |
+polyfills.js        | polyfills     | 38 bytes |
+
+                    | Initial total |  7.15 kB
+
+Application bundle generation complete. [1.839 seconds] - 2026-03-06T18:21:21.115Z
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          |  7.02 kB |
+styles.css          | styles        | 96 bytes |
+polyfills.js        | polyfills     | 38 bytes |
+
+                    | Initial total |  7.15 kB
+
+Application bundle generation complete. [0.115 seconds] - 2026-03-06T18:21:34.690Z

@@ -1,1 +1,20 @@
+<h1>{{ title }}</h1>
+
+<ul>
+  @for (task of store.tasks(); track task.id) {
+    <li>
+      <span [style.text-decoration]="task.completed ? 'line-through' : 'none'">
+        {{ task.title }}
+      </span>
+      <button (click)="store.toggleTask(task.id)">Toggle</button>
+      <button (click)="store.removeTask(task.id)">Remove</button>
+    </li>
+  }
+</ul>
+
+<input #newTaskTitle type="text" placeholder="New task title" />
+<button (click)="store.addTask(newTaskTitle.value); newTaskTitle.value = ''">
+  Add Task
+</button>
+
 <router-outlet></router-outlet>

@@ -1,0 +1,129 @@
+
+> angular-tasks-redux@0.0.0 start
+> ng serve
+
+❯ Building...
+✔ Building...
+Application bundle generation failed. [3.946 seconds] - 2026-03-06T18:18:05.879Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:8:0:
+[37m      8 │ [32mdescribe[37m('AppComponent', () => {
+        ╵ [32m~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'beforeAll'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:9:2:
+[37m      9 │   [32mbeforeAll[37m(() => {
+        ╵   [32m~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:20:2:
+[37m      20 │   [32mit[37m('should render the title', async () => {
+         ╵   [32m~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:24:4:
+[37m      24 │     [32mexpect[37m(screen.getByText('angular-tasks-redux')).toBeDefined();
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:27:2:
+[37m      27 │   [32mit[37m('should render initial tasks from store', async () => {
+         ╵   [32m~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:31:4:
+[37m      31 │     [32mexpect[37m(screen.getByText('Learn Angular 21')).toBeDefined();
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:32:4:
+[37m      32 │     [32mexpect[37m(screen.getByText('Use Signal Store')).toBeDefined();
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:35:2:
+[37m      35 │   [32mit[37m('should add a new task', async () => {
+         ╵   [32m~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:46:4:
+[37m      46 │     [32mexpect[37m(screen.getByText('New Test Task')).toBeDefined();
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:49:2:
+[37m      49 │   [32mit[37m('should toggle a task', async () => {
+         ╵   [32m~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:57:4:
+[37m      57 │     [32mexpect[37m(taskText.style.textDecoration).toBe('none');
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:60:4:
+[37m      60 │     [32mexpect[37m(taskText.style.textDecoration).toBe('line-through');
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:63:4:
+[37m      63 │     [32mexpect[37m(taskText.style.textDecoration).toBe('none');
+         ╵     [32m~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:66:2:
+[37m      66 │   [32mit[37m('should remove a task', async () => {
+         ╵   [32m~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2304: Cannot find name 'expect'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.component.spec.ts:74:4:
+[37m      74 │     [32mexpect[37m(screen.queryByText('Learn Angular 21')).toBeNull();
+         ╵     [32m~~~~~~[0m
+
+
+Watch mode enabled. Watching for file changes...
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          |  7.02 kB |
+styles.css          | styles        | 96 bytes |
+polyfills.js        | polyfills     | 38 bytes |
+
+                    | Initial total |  7.15 kB
+
+Application bundle generation complete. [1.902 seconds] - 2026-03-06T18:21:21.178Z
+
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+6:21:21 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+An unhandled exception occurred: Port 4200 is already in use
+See "/tmp/ng-DoP0Mh/angular-errors.log" for further details.

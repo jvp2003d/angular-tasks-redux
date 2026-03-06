@@ -1,20 +1,30 @@
-<h1>{{ title }}</h1>
+<div class="container">
+  <h1>{{ title }}</h1>
 
-<ul>
-  @for (task of store.tasks(); track task.id) {
-    <li>
-      <span [style.text-decoration]="task.completed ? 'line-through' : 'none'">
-        {{ task.title }}
-      </span>
-      <button (click)="store.toggleTask(task.id)">Toggle</button>
-      <button (click)="store.removeTask(task.id)">Remove</button>
-    </li>
-  }
-</ul>
+  <mat-list>
+    @for (task of store.tasks(); track task.id) {
+      <mat-list-item>
+        <mat-checkbox [checked]="task.completed" (change)="store.toggleTask(task.id)">
+          <span [style.text-decoration]="task.completed ? 'line-through' : 'none'">
+            {{ task.title }}
+          </span>
+        </mat-checkbox>
+        <button mat-icon-button (click)="store.removeTask(task.id)" matListItemMeta aria-label="Remove task">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    }
+  </mat-list>
 
-<input #newTaskTitle type="text" placeholder="New task title" />
-<button (click)="store.addTask(newTaskTitle.value); newTaskTitle.value = ''">
-  Add Task
-</button>
+  <div class="add-task-form">
+    <mat-form-field appearance="outline">
+      <mat-label>New task</mat-label>
+      <input matInput #newTaskTitle placeholder="Enter task title" (keyup.enter)="store.addTask(newTaskTitle.value); newTaskTitle.value = ''">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="store.addTask(newTaskTitle.value); newTaskTitle.value = ''" [disabled]="!newTaskTitle.value">
+      Add Task
+    </button>
+  </div>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

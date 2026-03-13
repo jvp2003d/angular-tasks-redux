@@ -22,9 +22,13 @@ export const TasksStore = signalStore(
   withState(initialState),
   withMethods((store) => ({
     addTask(title: string) {
+      const trimmedTitle = title.trim();
+      if (!trimmedTitle) {
+        return;
+      }
       const newTask: Task = {
         id: Date.now(),
-        title,
+        title: trimmedTitle,
         completed: false,
       };
       patchState(store, (state) => ({ tasks: [...state.tasks, newTask] }));

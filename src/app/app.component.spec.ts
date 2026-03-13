@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/angular';
 import { AppComponent } from './app.component';
-import { TasksStore } from './tasks.store';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';

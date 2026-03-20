@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { TasksStore } from './tasks.store';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -12,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,

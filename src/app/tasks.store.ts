@@ -1,4 +1,5 @@
-import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
+import { computed } from '@angular/core';
+import { signalStore, withState, withMethods, patchState, withComputed } from '@ngrx/signals';
 
 export interface Task {
   id: number;
@@ -7,39 +8,51 @@ export interface Task {
 }
 
 export interface TasksState {
-  tasks: Task[];
+  taskEntities: Record<number, Task>;
 }
 
 const initialState: TasksState = {
-  tasks: [
-    { id: 1, title: 'Learn Angular 21', completed: false },
-    { id: 2, title: 'Use Signal Store', completed: false },
-  ],
+  taskEntities: {
+    1: { id: 1, title: 'Learn Angular 21', completed: false },
+    2: { id: 2, title: 'Use Signal Store', completed: false },
+  },
 };
 
 export const TasksStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
+  withComputed(({ taskEntities }) => ({
+    tasks: computed(() => Object.values(taskEntities())),
+  })),
   withMethods((store) => ({
     addTask(title: string) {
+      const id = Date.now();
       const newTask: Task = {
-        id: Date.now(),
+        id,
         title,
         completed: false,
       };
-      patchState(store, (state) => ({ tasks: [...state.tasks, newTask] }));
+      patchState(store, (state) => ({
+        taskEntities: { ...state.taskEntities, [id]: newTask },
+      }));
     },
     toggleTask(id: number) {
-      patchState(store, (state) => ({
-        tasks: state.tasks.map((t) =>
-          t.id === id ? { ...t, completed: !t.completed } : t
-        ),
-      }));
+      patchState(store, (state) => {
+        const task = state.taskEntities[id];
+        if (!task) return state;
+        return {
+          taskEntities: {
+            ...state.taskEntities,
+            [id]: { ...task, completed: !task.completed },
+          },
+        };
+      });
     },
     removeTask(id: number) {
-      patchState(store, (state) => ({
-        tasks: state.tasks.filter((t) => t.id !== id),
-      }));
+      patchState(store, (state) => {
+        const { [id]: _, ...taskEntities } = state.taskEntities;
+        return { taskEntities };
+      });
     },
   }))
 );

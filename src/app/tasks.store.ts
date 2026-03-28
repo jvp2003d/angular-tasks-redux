@@ -22,6 +22,9 @@ export const TasksStore = signalStore(
   withState(initialState),
   withMethods((store) => ({
     addTask(title: string) {
+      if (!title.trim()) {
+        return;
+      }
       const newTask: Task = {
         id: Date.now(),
         title,
